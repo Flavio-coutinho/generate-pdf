@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+
+    <style>
+        table {
+            width: 100%;
+        }
+
+        th {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Developer listing</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Technology</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (SoftwareDevelopers.length> 0) { %>
+                    <% SoftwareDevelopers.forEach(developer=> { %>
+                        <tr>
+                            <td>
+                                <%= developer.name %>
+                            </td>
+                            <td>
+                                <%= developer.company %>
+                            </td>
+                            <td>
+                                <%= developer.technology %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                            <% } %>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <%=SoftwareDevelopers.length%> Developers
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+</html>
